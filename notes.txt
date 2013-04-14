@@ -1,0 +1,20 @@
+notes: intro to MVC 4 (Movie database)
+
+http://www.asp.net/mvc/tutorials/mvc-4/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
+
+----
+
+MVC routing is similar to API routing. URLs point to a controller, action, and parameters rather than a traditional page. the "Index" method is the default action.
+	/[Controller]/[ActionName]/[Parameters]
+
+Action methods (within controllers) usually return a view. Right click inside the method and click "add view".
+
+Views are stored by default/generation within folders named to match the associated controller. The file name matches the method name.
+
+-SUPER USEFUL: right click on a view and click view in page inspector to see the view, rendered html and css, etc.
+
+_Layout.cshtml (in the shared folder in views) is used for all pages. Use it for things like banners and menus you want on all pages. Views are rendered where the @RenderBody line is in _Layout.cshtml.
+
+Note the use of ViewBag to alter the titles on pages. Individual page titles are merged into the layout's title.
+
+temp note: next step: "passing data from the controller to the view"
