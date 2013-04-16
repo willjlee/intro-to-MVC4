@@ -17,4 +17,10 @@ _Layout.cshtml (in the shared folder in views) is used for all pages. Use it for
 
 Note the use of ViewBag to alter the titles on pages. Individual page titles are merged into the layout's title.
 
-temp note: next step: "passing data from the controller to the view"
+You can pass information from the controller to the view using a ViewBag. preoperties can be added to a ViewBag on the fly (eg, ViewBag.numTimes can be used without ViewBag actually having a numTimes property beforehand).
+
+@ replaces <%...%> for inserting code into html
+
+Auto-generated code uses an alternative to the ViewBag that allows for strong typing. in the Movies views, note the @model line at the top. Defines expected parameter. Good for compile-time checking and intellisense.
+
+To find data: show all files in solution explorer. App_Data>[db file]. Right click a table to view data. NOTE: close the connection after you finish working with this.
