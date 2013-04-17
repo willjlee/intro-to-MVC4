@@ -24,3 +24,5 @@ You can pass information from the controller to the view using a ViewBag. preope
 Auto-generated code uses an alternative to the ViewBag that allows for strong typing. in the Movies views, note the @model line at the top. Defines expected parameter. Good for compile-time checking and intellisense.
 
 To find data: show all files in solution explorer. App_Data>[db file]. Right click a table to view data. NOTE: close the connection after you finish working with this.
+
+DO NOT modify any data within GET methods

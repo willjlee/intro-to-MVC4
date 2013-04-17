@@ -119,5 +119,33 @@ namespace MvcMovie.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+        //search index
+        public ActionResult SearchIndex(string movieGenre, string searchString)
+        {
+            var GenreLst = new List<string>();
+
+            var GenreQry = from d in db.Movies
+                           orderby d.Genre
+                           select d.Genre; //get list of genres
+            GenreLst.AddRange(GenreQry.Distinct()); //put genres in list
+            ViewBag.movieGenre = new SelectList(GenreLst); 
+
+            var movies = from m in db.Movies
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.Title.Contains(searchString));
+            }
+
+            if (string.IsNullOrEmpty(movieGenre))
+                return View(movies); //if no genre selected, return list of movies matching search
+            else
+            {
+                return View(movies.Where(x => x.Genre == movieGenre)); //else limit by genre
+            }
+
+        }
     }
 }
