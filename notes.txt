@@ -26,3 +26,8 @@ Auto-generated code uses an alternative to the ViewBag that allows for strong ty
 To find data: show all files in solution explorer. App_Data>[db file]. Right click a table to view data. NOTE: close the connection after you finish working with this.
 
 DO NOT modify any data within GET methods
+
+If you update your model after the database has data, you can:
+	1. have EF drop and recreate table. loses all data.
+	2. explicitly change the data to match the model class
+	3. use code first migrations (details in the tutorial, using package manager)
