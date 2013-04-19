@@ -31,3 +31,9 @@ If you update your model after the database has data, you can:
 	1. have EF drop and recreate table. loses all data.
 	2. explicitly change the data to match the model class
 	3. use code first migrations (details in the tutorial, using package manager)
+
+Adding validation rules to the model will automatically propagate to the views and controllers. (makes it easy to change the rules without changing it in many places)
+
+note that the auto-generated delete method does nothing to the database, since it is a GET request.
+
+also note the [HttpPost, ActionName("Delete")] on Delete Confirmed. This maps it to site/movies/delete for a post request
